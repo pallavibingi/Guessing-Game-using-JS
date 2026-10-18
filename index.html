@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="game-container">
+
+        <div class="game-icon">🎯</div>
+
+        <p class="tagline">THE ULTIMATE CHALLENGE</p>
+        <h1>Guess The <span>Number</span></h1>
+        <p class="subtitle">
+            Can you read my mind? Find the secret number!
+        </p>
+
+        <section class="range-section">
+            <label for="range">Choose your maximum range</label>
+            <div class="range-row">
+                <input type="number" id="range"
+                       min="1" max="100" value="100">
+                <button id="start-btn">Start Game</button>
+            </div>
+            <p class="small-text">Choose a number between 1 and 100.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="game-area">
+            <p class="range-label">YOUR SECRET NUMBER IS BETWEEN</p>
+            <div class="range-display">
+                1 <span>—</span> <span id="max-range">100</span>
+            </div>
+
+            <form id="guess-form">
+                <label for="guess-input">Enter your guess</label>
+                <input
+                    type="number"
+                    id="guess-input"
+                    placeholder="Type a number..."
+                    min="1"
+                    required
+                    autocomplete="off"
+                >
+                <button type="submit" class="guess-btn">
+                    Make a Guess ✨
+                </button>
+            </form>
+
+            <div id="feedback" class="feedback" role="status"
+                 aria-live="polite">
+                I'm thinking of a number. Good luck!
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-icon">🎮</span>
+                    <p>Attempts</p>
+                    <h2 id="attempts">0</h2>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🔢</span>
+                    <p>Possible Numbers</p>
+                    <h2 id="remaining">100</h2>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="quit-btn" class="quit-btn">Quit Game</button>
+                <button id="restart-btn" class="restart-btn">
+                    ↻ Play Again
+                </button>
+            </div>
+        </section>
+
+        <footer>MADE WITH 💜 AND JAVASCRIPT</footer>
+
+    </main>
+
+</body>
+</html>
